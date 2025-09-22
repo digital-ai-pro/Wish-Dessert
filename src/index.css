@@ -1,0 +1,186 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Wish Dessert Cafe Design System - Warm & Inviting Colors
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Base colors - Warm cream background */
+    --background: 35 30% 97%;
+    --foreground: 25 30% 15%;
+
+    /* Card colors - Soft warm white */
+    --card: 35 25% 98%;
+    --card-foreground: 25 30% 15%;
+
+    /* Popover colors */
+    --popover: 35 25% 98%;
+    --popover-foreground: 25 30% 15%;
+
+    /* Primary - Warm rose/pink */
+    --primary: 340 65% 68%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft peach */
+    --secondary: 25 55% 88%;
+    --secondary-foreground: 25 30% 20%;
+
+    /* Muted - Light cream */
+    --muted: 35 25% 92%;
+    --muted-foreground: 25 20% 45%;
+
+    /* Accent - Golden honey */
+    --accent: 40 75% 75%;
+    --accent-foreground: 25 30% 20%;
+
+    /* Destructive colors */
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border and input */
+    --border: 35 20% 85%;
+    --input: 35 20% 85%;
+    --ring: 340 65% 68%;
+
+    /* Custom cafe colors */
+    --cafe-warm: 25 65% 82%;
+    --cafe-cream: 35 40% 92%;
+    --cafe-gold: 45 85% 70%;
+    --cafe-brown: 25 40% 35%;
+    --cafe-pink: 340 65% 68%;
+    --cafe-gradient: linear-gradient(135deg, hsl(340 65% 68%), hsl(25 65% 82%), hsl(45 85% 70%));
+    --cafe-hero-gradient: linear-gradient(135deg, hsl(340 65% 68% / 0.9), hsl(25 65% 82% / 0.8));
+    --cafe-shadow: 0 10px 30px -10px hsl(340 65% 68% / 0.2);
+    --cafe-glow: 0 0 40px hsl(45 85% 70% / 0.3);
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode - Warm browns and soft lighting */
+    --background: 25 25% 8%;
+    --foreground: 35 15% 90%;
+
+    --card: 25 20% 12%;
+    --card-foreground: 35 15% 90%;
+
+    --popover: 25 20% 12%;
+    --popover-foreground: 35 15% 90%;
+
+    --primary: 340 55% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 25% 18%;
+    --secondary-foreground: 35 15% 85%;
+
+    --muted: 25 20% 15%;
+    --muted-foreground: 35 10% 60%;
+
+    --accent: 40 65% 55%;
+    --accent-foreground: 25 25% 15%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 25 15% 20%;
+    --input: 25 15% 20%;
+    --ring: 340 55% 60%;
+
+    /* Dark mode cafe colors */
+    --cafe-warm: 25 45% 25%;
+    --cafe-cream: 35 25% 18%;
+    --cafe-gold: 45 65% 50%;
+    --cafe-brown: 25 30% 20%;
+    --cafe-pink: 340 55% 60%;
+    --cafe-gradient: linear-gradient(135deg, hsl(340 55% 60%), hsl(25 45% 25%), hsl(45 65% 50%));
+    --cafe-hero-gradient: linear-gradient(135deg, hsl(340 55% 60% / 0.8), hsl(25 45% 25% / 0.9));
+    --cafe-shadow: 0 10px 30px -10px hsl(340 55% 60% / 0.3);
+    --cafe-glow: 0 0 40px hsl(45 65% 50% / 0.2);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /* Custom animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes pulse-soft {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, hsl(var(--cafe-gold) / 0.3), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .animate-pulse-soft {
+    animation: pulse-soft 3s ease-in-out infinite;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Arabic font support */
+  .font-arabic {
+    font-family: 'Amiri', 'Cairo', 'Noto Sans Arabic', serif;
+  }
+}
